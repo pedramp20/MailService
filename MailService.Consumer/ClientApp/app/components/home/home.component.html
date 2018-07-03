@@ -1,0 +1,34 @@
+<form #f="ngForm" (ngSubmit)="send()">
+    <fieldset disabled>
+        <div class="form-group">
+            <label for="fromInput">from</label>
+            <input type="email" class="form-control" id="fromInput" [(ngModel)]="mail.from" name="mailFrom">
+        </div>
+    </fieldset>
+    <div class="form-group">
+        <label for="toInput">To</label>
+        <input type="email" class="form-control" id="toInput" placeholder="name@example.com" (change)="onToChange(f)" [(ngModel)]="toEmails" name="toEmails" required #to="ngModel">
+    </div>
+    <div class="alert alert-danger" *ngIf="to.touched && to.errors?.required"> To email is required. </div>
+    <div class="alert alert-danger" *ngIf="to.touched && to.errors?.invalidFormat"> Invalid email(s). </div>
+    <div class="form-group">
+        <label for="CcInput">Cc</label>
+        <input type="email" class="form-control" id="CcInput" (change)="onCcChange(f)" [(ngModel)]="ccEmails" name="ccEmails" #cc="ngModel">
+    </div>
+    <div class="alert alert-danger" *ngIf="cc.touched && cc.errors?.invalidFormat"> Invalid email(s). </div>
+    <div class="form-group">
+        <label for="toInput">Bcc</label>
+        <input type="email" class="form-control" id="BccInput" (change)="onBccChange(f)" [(ngModel)]="bccEmails" name="bccEmails" #bcc="ngModel">
+    </div>
+    <div class="alert alert-danger" *ngIf="bcc.touched && bcc.errors?.invalidFormat"> Invalid email(s). </div>
+    <div class="form-group">
+        <label for="subjectInput">Subject</label>
+        <input type="text" class="form-control" id="subjectInput" [(ngModel)]="mail.subject" name="mailSubject" required #subject="ngModel">
+    </div>
+    <div class="alert alert-danger" *ngIf="subject.touched && !subject.valid"> Subject is required. </div>
+    <div class="form-group">
+        <textarea class="form-control" id="bodyTextarea1" placeholder="Write your email here" rows="10" [(ngModel)]="mail.body" name="mailBody"  required #mailBody="ngModel"></textarea>
+    </div>
+    <div class="alert alert-danger" *ngIf="mailBody.touched && !mailBody.valid"> Body is required. </div>
+    <button type="submit" class="btn btn-primary" [disabled]="!f.valid">Send</button>
+</form>

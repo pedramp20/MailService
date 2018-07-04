@@ -15,7 +15,7 @@
         {
             var optionsMock = new Mock<IOptions<MailSecrets>>();
             optionsMock.Setup(o => o.Value).Returns(
-                () => new MailSecrets { MailGunServiceApiKey = "0d0abac39005b10f88e1f4fe0f72a054-e44cc7c1-3a8b452c" });
+                () => new MailSecrets { MailGunServiceApiKey = ">>Update your API key<<" });
 
             MailGunMailService = new MailGunMailService(optionsMock.Object);
         }

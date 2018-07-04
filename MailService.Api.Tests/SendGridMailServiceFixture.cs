@@ -21,7 +21,7 @@
                 () => new MailSecrets
                           {
                               SendGridServiceApiKey =
-                                  "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"
+                                  ">>Update your API key<<"
                           });
 
             var config = new MapperConfiguration(cfg => { cfg.AddProfile(new DomainProfile()); });

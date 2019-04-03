@@ -7,7 +7,7 @@ Mail service is a simple email service that accepts the necessary information an
 
 Install [.NET Core 2.1 or later](https://www.microsoft.com/net/download/windows)
 
-Install you favourite code editor such [VS Code](https://code.visualstudio.com/) or IDE [Visual Studio 2017](https://docs.microsoft.com/en-us/visualstudio/install/install-visual-studio)
+Install your favourite code editor such [VS Code](https://code.visualstudio.com/) or IDE [Visual Studio 2017](https://docs.microsoft.com/en-us/visualstudio/install/install-visual-studio)
 
 ### Prerequisites
 
